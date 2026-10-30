@@ -4,6 +4,12 @@ End-to-end portfolio project demonstrating governance data management, control m
 
 > **Portfolio note:** All control records and business data in this project are synthetic and were created for demonstration purposes.
 
+## Live Power BI Dashboard
+
+**[Open the interactive Enterprise Governance Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNTgxZWYwODctNDg5Mi00N2EwLThlNzUtODRjNjEzN2YzNDE2IiwidCI6IjVkN2I0OWU5LTUwZDItNDBkYy1iYWIxLTE0YTJkOTAzNTQyYyIsImMiOjh9)**
+
+The repository also includes static screenshots so the project remains reviewable without opening Power BI.
+
 ## Project Summary
 
 This project simulates an enterprise governance environment containing **1,500 control records** across multiple business units, regions, risk levels, review states, evidence states, and remediation statuses.
@@ -13,6 +19,23 @@ The solution was designed as an integrated workflow:
 **Excel / Power Query → SharePoint → Power Automate → Power BI → Executive Reporting**
 
 The objective was to create a practical governance operating model that can identify exceptions, centralize evidence, automate follow-up, and surface management-level insights.
+
+## Dashboard Preview
+
+### Executive Overview
+![Executive Overview](screenshots/executive-overview.png)
+
+### Risk & Compliance
+![Risk & Compliance](screenshots/risk-compliance.png)
+
+### Data Quality
+![Data Quality](screenshots/data-quality.png)
+
+### Regional Performance
+![Regional Performance](screenshots/regional-performance.png)
+
+### Control Drilldown
+![Control Drilldown](screenshots/control-drilldown.png)
 
 ## What I Built
 
@@ -31,6 +54,8 @@ Built an **Enterprise Governance Hub** containing:
 
 The evidence library includes metadata-driven document management, approval status tracking, and version history.
 
+![SharePoint Governance Controls](screenshots/sharepoint-governance-controls.png)
+
 ### Power Automate
 Implemented two working workflows:
 
@@ -45,6 +70,12 @@ Implemented two working workflows:
    - Action: routes evidence through Approve/Reject workflow and automatically updates SharePoint metadata
 
 > Email and Teams notification channels were restricted by the university Microsoft 365 tenant, so the alert workflow uses a SharePoint exception queue while preserving the same automation logic.
+
+#### Critical Control Alert — Successful Run
+![Power Automate Critical Alert Success](screenshots/power-automate-critical-alert-success.png)
+
+#### Evidence Approval Workflow
+![Power Automate Evidence Approval](screenshots/power-automate-evidence-approval-running.png)
 
 ### Power BI
 Built a **five-page interactive governance dashboard**:
@@ -70,14 +101,20 @@ Built a **five-page interactive governance dashboard**:
 ## Repository Structure
 
 ```text
-├── data/
-│   └── Enterprise_Governance_FINAL.xlsx
+├── 01_Enterprise_Governance_FINAL.xlsx
+├── Enterprise_Governance_Dashboard.pbix
+├── sources/
+│   ├── SharePoint_Controls_Import.csv
+│   └── SharePoint_Document_Metadata_Import.csv
 ├── screenshots/
 │   ├── executive-overview.png
 │   ├── risk-compliance.png
 │   ├── data-quality.png
 │   ├── regional-performance.png
-│   └── control-drilldown.png
+│   ├── control-drilldown.png
+│   ├── sharepoint-governance-controls.png
+│   ├── power-automate-critical-alert-success.png
+│   └── power-automate-evidence-approval-running.png
 └── README.md
 ```
 
